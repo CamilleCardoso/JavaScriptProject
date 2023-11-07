@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tela de Login </title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-repeat: repeat;
+            background-position: center;
+            background-color: #c0c0c0;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .logotipo {
+            margin: 0 auto;
+            /* Centralize horizontalmente */
+        }
+
+        #logotipo {
+            max-width: 100px;
+            max-height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .Titulo {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            text-align: center;
+            margin-top: 20px;
+            /* Adicione um espaçamento superior */
+        }
+
+        .Login {
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 70px;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            width: 300px;
+        }
+
+        input {
+            padding: 15px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="Titulo">
+            <h1>The Book Cellar</h1>
+        </div>
+    </div>
+
+    <div class="Login">
+        <div class="logotipo">
+            <img src="C:\Users\AvecomDev08\Downloads\logotipo.png" id="logotipo">
+        </div>
+        <h2> Login </h2>
+        <br><br>
+        <input type="text" placeholder="Nome" id="login">
+        <br><br>
+        <input type="password" placeholder="Senha" id="senha">
+        <br><br>
+        <input type="submit" onclick="logar()">
+        <br><br>
+        Lembrar senha
+        <input type="checkbox">
+    </div>
+    <script>
+        function logar() {
+            var login = document.getElementById('login').value;
+            var senha = document.getElementById('senha').value;
+
+            fetch('http://localhost:9000/Livros', {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Basic ' + btoa(login + ':' + senha)
+                }
+            })
+                .then(response => {
+                    if (response.status === 200) {
+                        Swal.fire('Você logou!');
+                        window.location.href = 'Menu.html';
+                    } else {
+                        Swal.fire('Usuário ou senha incorreto');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro na solicitação: ' + error);
+                });
+        }
+    </script>
+</body>
+
+</html>

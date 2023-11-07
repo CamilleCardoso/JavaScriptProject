@@ -1,0 +1,83 @@
+/* Define a fonte principal e a cor de fundo para todo o corpo do site */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #c0c0c0;
+    margin: 0; /* Remova as margens padrão */
+    padding: 0; /* Remova o preenchimento padrão */
+}
+
+/* Centralize o texto no cabeçalho */
+.header {
+    text-align: center;
+}
+
+/* Estilize o logotipo */
+.logotipo {
+    float: right;
+    margin-right: 20px;
+}
+
+#logotipo {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Estilize o título */
+.Titulo {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 20px; /* Adicione um espaçamento superior */
+}
+
+/* Estilize a área de login */
+.Login {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 50%; /* Centralize verticalmente */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px; /* Reduza o preenchimento */
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    width: 300px; /* Defina uma largura fixa */
+}
+
+/* Estilize os campos de entrada de texto */
+input {
+    padding: 10px; /* Reduza o preenchimento para os campos de entrada */
+    border: 1px solid #ccc; /* Adicione uma borda sutil */
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+    margin: 10px 0; /* Adicione um espaçamento vertical entre os campos */
+    width: 100%; /* Ocupa a largura total do contêiner */
+}
+
+/* Estilize o botão de envio */
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Defina estilos para links */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Estilize o rodapé, se aplicável */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
