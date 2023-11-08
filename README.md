@@ -1,4 +1,4 @@
-##Getting Started
+## Getting Started
 
 - Access the GitHub repository of the **LibraryAPI** project;
 
